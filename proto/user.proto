@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "golang-grpc/proto";
+
+message User {
+ int32 id = 1;
+ string name = 2;
+ string email = 3;
+}
+
+message UserRequest {
+    int32 id = 1;
+}
+
+message UserListResponse {
+    repeated User users = 1;
+}
+
+message CreateUserRequest {
+    string name = 1;
+    string email = 2;
+}
+
+message UpdateUserRequest {
+    int32 id = 1;
+    string name = 2;
+    string email = 3;
+}
+
+message DeleteUserRequest {
+    int32 id = 1;
+}
+
+message Empty {}
+
+service userService {
+    rpc GetUser(UserRequest) returns (User);
+    rpc ListUser(Empty) returns (UserListResponse);
+    rpc CreateUser(CreateUserRequest) returns (User);
+    rpc UpdateUser(UpdateUserRequest) returns (User);
+    rpc DeleteUser(DeleteUserRequest) returns (Empty);
+}
