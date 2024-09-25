@@ -1,0 +1,7 @@
+gRPC server is running on port 50051
+gRPC server is running on port 50051
+2024/09/24 08:34:34 Failed to listen: listen tcp :50051: bind: address already in use
+2024/09/24 08:39:43 Error fetching user:  failed to connect to `user=postgres database=db_golang_grpc`:
+	127.0.0.1:5432 (localhost): dial error: dial tcp 127.0.0.1:5432: connect: connection refused
+	127.0.0.1:5432 (localhost): dial error: dial tcp 127.0.0.1:5432: connect: connection refused
+gRPC server is running on port 50051
