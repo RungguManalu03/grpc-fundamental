@@ -7,13 +7,20 @@ import (
 	"golang-grpc/repository"
 	"log"
 	"net"
+	"os"
 
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
 )
 
 func main() {
-	dbUrl := "postgres://postgres:123@localhost:5432/db_golang_grpc"
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading env file: ", err)
+	}
+
+	dbUrl := os.Getenv("DATABASE")
 	dbPool, err := pgxpool.New(context.Background(), dbUrl)
 	if err != nil {
 		log.Fatalf("Unable to connect to database: %v\n", err)
