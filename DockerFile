@@ -6,4 +6,4 @@ COPY . .
 
 RUN go build -o golangrpcbuild
 
-CMD ["./golangrpcbuild"]
+CMD ["./golangrpcbuild"] 
