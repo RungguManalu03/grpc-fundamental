@@ -1,6 +1,8 @@
 module golang-grpc
 
-go 1.23.0
+go 1.21
+
+toolchain go1.21.1
 
 require (
 	github.com/jackc/pgx/v5 v5.7.1

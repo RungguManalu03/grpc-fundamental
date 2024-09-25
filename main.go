@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	dbUrl := "postgres://postgres:123@localhost:5432/db_golang_grpc"
+	dbUrl := "postgres://postgres:03Manalu01@35.223.1.56:5432/db_golang_grpc"
 	dbPool, err := pgxpool.New(context.Background(), dbUrl)
 	if err != nil {
 		log.Fatalf("Unable to connect to database: %v\n", err)
